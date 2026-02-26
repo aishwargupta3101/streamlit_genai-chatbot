@@ -1,12 +1,16 @@
 import os
 
 
+from dotenv import load_dotenv
 import streamlit as st
+from langchain_classic.chains import RetrievalQA
 from langchain_groq import ChatGroq
 api_key = os.getenv("GROQ_API_KEY")
 
 
 
+
+load_dotenv()
 
 
 # streamlit page setup
@@ -31,6 +35,7 @@ for message in st.session_state.chat_history:
 llm= ChatGroq(
     model="llama-3.3-70b-versatile",
     temperature=0.0,
+    api_key=api_key
 )
 
 #input user
@@ -48,6 +53,7 @@ if user_prompt:
 
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
+
 
 
 
