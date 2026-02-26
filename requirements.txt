@@ -1,6 +1,8 @@
 streamlit
 python-dotenv
 langchain-community
+langchain-classic
 
 langchain--groq
+
 
