@@ -1,11 +1,13 @@
 import os
 
-from dotenv import load_dotenv
+
 import streamlit as st
 from langchain_groq import ChatGroq
+api_key = os.getenv("GROQ_API_KEY")
+st.write("API KEY:",api_key)
 
-#load the env variables
-load_dotenv()
+
+
 
 # streamlit page setup
 st.set_page_config(
@@ -46,6 +48,7 @@ if user_prompt:
 
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
+
 
 
 
