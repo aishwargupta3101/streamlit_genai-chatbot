@@ -4,7 +4,7 @@ import os
 import streamlit as st
 from langchain_groq import ChatGroq
 api_key = os.getenv("GROQ_API_KEY")
-st.write("API KEY:",api_key)
+
 
 
 
@@ -48,6 +48,7 @@ if user_prompt:
 
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
+
 
 
 
